@@ -8,6 +8,8 @@ import java.util.Objects;
 public class StaffFinder {
     public static void main(String[] args) throws IOException {
         boolean retry = true;
+        InputStreamReader inputReader;
+        BufferedReader bufferedInputReader;
         while (retry) {
             StaffFinder staffFinder = new StaffFinder();
             String name;
@@ -19,8 +21,8 @@ public class StaffFinder {
             catch (Exception IOException) {
                 System.out.println("This person could not be found. --- :(");
                 System.out.println("Would you like to search again? y/n");
-                InputStreamReader inputReader = new InputStreamReader(System.in);
-                BufferedReader bufferedInputReader = new BufferedReader(inputReader);
+                inputReader = new InputStreamReader(System.in);
+                bufferedInputReader = new BufferedReader(inputReader);
                 if (Objects.equals(bufferedInputReader.readLine().toLowerCase(), "n")) {
                     retry = false;
                 }
